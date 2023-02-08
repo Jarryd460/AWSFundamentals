@@ -5,6 +5,17 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqsPublisher", "SqsPublisher\SqsPublisher.csproj", "{BF496D01-721C-4977-94CD-D4FBFD28AA7A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sqs", "Sqs", "{B59B1FDF-40A0-4323-AD8B-9BB55CEB6D40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqsConsumer", "SqsConsumer\SqsConsumer.csproj", "{FBE29CEF-4EDC-42F8-8655-8FFB38542862}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{35E60183-A9E1-42DC-AA29-0533561157DA}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +26,17 @@ Global
 		{BF496D01-721C-4977-94CD-D4FBFD28AA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF496D01-721C-4977-94CD-D4FBFD28AA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF496D01-721C-4977-94CD-D4FBFD28AA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBE29CEF-4EDC-42F8-8655-8FFB38542862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE29CEF-4EDC-42F8-8655-8FFB38542862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE29CEF-4EDC-42F8-8655-8FFB38542862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE29CEF-4EDC-42F8-8655-8FFB38542862}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF496D01-721C-4977-94CD-D4FBFD28AA7A} = {B59B1FDF-40A0-4323-AD8B-9BB55CEB6D40}
+		{FBE29CEF-4EDC-42F8-8655-8FFB38542862} = {B59B1FDF-40A0-4323-AD8B-9BB55CEB6D40}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4A3CDE3-15B0-4C8C-B055-4DF6D6B96974}
