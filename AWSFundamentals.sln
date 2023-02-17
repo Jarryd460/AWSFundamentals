@@ -13,10 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		AWSFundamentals = AWSFundamentals
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.Api", "Sqs\Customers.Api\Customers.Api.csproj", "{7D1FC558-8EB3-43E7-ABBF-EBE0D37CAA9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Consumer", "Sqs\Customers.Consumer\Customers.Consumer.csproj", "{B10D6FF5-8970-4667-AB32-8EE1670E69C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +39,10 @@ Global
 		{7D1FC558-8EB3-43E7-ABBF-EBE0D37CAA9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D1FC558-8EB3-43E7-ABBF-EBE0D37CAA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D1FC558-8EB3-43E7-ABBF-EBE0D37CAA9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B10D6FF5-8970-4667-AB32-8EE1670E69C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B10D6FF5-8970-4667-AB32-8EE1670E69C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B10D6FF5-8970-4667-AB32-8EE1670E69C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B10D6FF5-8970-4667-AB32-8EE1670E69C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +51,7 @@ Global
 		{BF496D01-721C-4977-94CD-D4FBFD28AA7A} = {B59B1FDF-40A0-4323-AD8B-9BB55CEB6D40}
 		{FBE29CEF-4EDC-42F8-8655-8FFB38542862} = {B59B1FDF-40A0-4323-AD8B-9BB55CEB6D40}
 		{7D1FC558-8EB3-43E7-ABBF-EBE0D37CAA9D} = {B59B1FDF-40A0-4323-AD8B-9BB55CEB6D40}
+		{B10D6FF5-8970-4667-AB32-8EE1670E69C4} = {B59B1FDF-40A0-4323-AD8B-9BB55CEB6D40}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4A3CDE3-15B0-4C8C-B055-4DF6D6B96974}
