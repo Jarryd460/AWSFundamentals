@@ -20,6 +20,7 @@ An AWS fundamentals course (https://nickchapsas.com/courses/enrolled/1993904)
 
 ##### Sqs
 
+* Messages are sent to a sqs where a consumer can read those messages.
 * Search for sqs (Simple Queue Service) and click create queue.
     * Type: Standard
     * Name: customers
@@ -44,3 +45,35 @@ An AWS fundamentals course (https://nickchapsas.com/courses/enrolled/1993904)
 
 * Customers.Api provides the capability of adding, updating and deleting records from a database and adding messages to the customers queue after completion of those operations.
 * Customers.Consumer runs a background service which monitors the customers queue and reads those messages and outputs those messages to the console window. If a message failurs to be processed 3 consecutive times, that message will be put in the dead letter queue (customers-dlq). To mimic this, throw an exception in one of the Handlers handle method.
+
+##### Sns
+
+* A message is published to an sns which then pushes those messages to subscriptions (sqs) and those subscriptions can decide what messages should be pushed.
+* Search for sns (Simple Notification Service) and click create topic with name customers.
+* Go to customers topic and create subscription.
+    * Topic: ....customers
+    * Protocol: Amazon SQS
+    * Endpoint: ....customers
+* To publish message to customers queue from topic you will need to update customers queue first.
+    * Go to customers queue -> Access Policy and add the following:
+        * {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "sns.amazonaws.com"
+      },
+      "Action": "sqs:SendMessage",
+      "Resource": "arn:aws:sqs:us-east-1:610403247034:customers2",
+      "Condition": {
+        "ArnEquals": {
+          "aws:SourceArn": "arn:aws:sns:us-east-1:610403247034:customers"
+        }
+      }
+    }
+* To add another queue named customers2 follow the above 2 points.
+* Subscription filters can be added by clicking on a subscription and clicking edit and scrolling down to subscription filter policy. An Example to add for message body would be:
+    * {
+  "Fullname": [
+    "Jarryd Deane"
+  ]
+}
+* Note that the Customers.Consumer project from sqs can be used along with the Customers.Api from sns.
