@@ -87,12 +87,17 @@ An AWS fundamentals course (https://nickchapsas.com/courses/enrolled/1993904)
 * Customers are stored in a DynamoDb.
 * A user is able to create, update, delete and retrieve a single or all customers.
 * See CustomerRepository for implementation.
-* The "movies" database has been manually created in AWS with the "pk" and "sk" being the unique keys
+* The "customers" database has been manually created in AWS with the "pk" and "sk" being the unique keys and being named as such.
+    * A global index has also been created with partition key being "email" and sort key being "Id".
+        * You can create it by going to the table and clicking on the index tab and clicking create index.
 
 ##### Movies.Api
 
 * Movies are seeded to two databases namely:
     * movies-year-title
     * movies-title-wrotten
-* The above tables are manually created in AWS.
+* The above tables are manually created in AWS with "pk" and "sk" being the unique keys and being named as such.
 * In the Program.cs file, a transaction is created to insert two records into two separate tables.
+* A "movies" database has been manually created in AWS with customized tables settings turned on and a secondary index added named "RottenTomatoesPercentage" (sort key name) and "rotten-index" (index name).
+    * You can search using the exact code we do for the global index in customers.
+    * Dynamo Db streams is a feature that allows one to be notified when a change has been made in the database such as adding and updating and get the previous and/or new values or just the pk/sk. You can use this instead of Sns/Sqs.
