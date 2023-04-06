@@ -5,6 +5,8 @@ An AWS fundamentals course (https://nickchapsas.com/courses/enrolled/1993904)
 
 ### Dependencies:
 * AWSSDK.SQS
+* AWSSDK.SimpleNotificationService
+* AWSSDK.DynamoDBv2
 
 ### Create a publisher and consumer of a SQS Queue
 
@@ -77,3 +79,20 @@ An AWS fundamentals course (https://nickchapsas.com/courses/enrolled/1993904)
   ]
 }
 * Note that the Customers.Consumer project from sqs can be used along with the Customers.Api from sns.
+
+### DynamoDb
+
+##### Customers.Api
+
+* Customers are stored in a DynamoDb.
+* A user is able to create, update, delete and retrieve a single or all customers.
+* See CustomerRepository for implementation.
+* The "movies" database has been manually created in AWS with the "pk" and "sk" being the unique keys
+
+##### Movies.Api
+
+* Movies are seeded to two databases namely:
+    * movies-year-title
+    * movies-title-wrotten
+* The above tables are manually created in AWS.
+* In the Program.cs file, a transaction is created to insert two records into two separate tables.
