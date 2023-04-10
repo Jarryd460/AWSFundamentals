@@ -1,6 +1,7 @@
 ﻿using Amazon.S3;
 using Customers.Api.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace Customers.Api.Controllers
 {
@@ -45,7 +46,14 @@ namespace Customers.Api.Controllers
         [HttpDelete("customers/{id:guid}/image")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
-            throw new NotImplementedException();
+            var response = await _customerImageService.DeleteImageAsync(id).ConfigureAwait(false);
+
+            return response.HttpStatusCode switch
+            {
+                HttpStatusCode.NoContent => Ok(),
+                HttpStatusCode.NotFound => NotFound(),
+                _ => BadRequest()
+            };
         }
     }
 }
