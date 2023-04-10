@@ -6,7 +6,7 @@ public interface ICustomerImageService
 {
     Task<PutObjectResponse> UploadImageAsync(Guid id, IFormFile file);
 
-    Task<GetObjectResponse> GetImagesAsync(Guid id);
+    Task<GetObjectResponse> GetImageAsync(Guid id);
 
     Task<DeleteObjectResponse> DeleteImageAsync(Guid id);
 }
