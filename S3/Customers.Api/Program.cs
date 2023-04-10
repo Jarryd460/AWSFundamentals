@@ -1,4 +1,5 @@
 using Amazon.DynamoDBv2;
+using Amazon.S3;
 using Amazon.SimpleNotificationService;
 using Customers.Api.Messaging;
 using Customers.Api.Repositories;
@@ -23,6 +24,9 @@ builder.Services.AddControllers().AddFluentValidation(x =>
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<IAmazonS3, AmazonS3Client>();
+builder.Services.AddSingleton<ICustomerImageService, CustomerImageService>();
 
 builder.Services.Configure<TopicSettings>(builder.Configuration.GetSection(TopicSettings.Key));
 builder.Services.AddSingleton<IAmazonSimpleNotificationService, AmazonSimpleNotificationServiceClient>();
