@@ -108,3 +108,14 @@ An AWS fundamentals course (https://nickchapsas.com/courses/enrolled/1993904)
 * You can add a file to that bucket by clicking on the bucket and there should be a upload button to click.
     * You can upload a single file or a folder with multiple files.
     * You can share a link to the uploaded file temporarily by clicking actions -> share with a presigned url.
+* A bucket can be versioned meaning that as files change, older versions of the file will be kept.
+    * You can do this by going to the properties tab of the bucket and enabling versioning.
+    * You can then go to the file and under the versions tab, view all the versions of the file.
+
+##### S3 Playground
+
+* A simple console application that uploads two files (Map.png and movies.csv) to S3 bucket and retrieves movies.csv from S3 bucket and writes the output to the console window.
+
+##### Customers.Api
+
+* Adds support for uploading, retrieving and deleting files from S3 bucket.
