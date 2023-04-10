@@ -101,3 +101,10 @@ An AWS fundamentals course (https://nickchapsas.com/courses/enrolled/1993904)
 * A "movies" database has been manually created in AWS with customized tables settings turned on and a secondary index added named "RottenTomatoesPercentage" (sort key name) and "rotten-index" (index name).
     * You can search using the exact code we do for the global index in customers.
     * Dynamo Db streams is a feature that allows one to be notified when a change has been made in the database such as adding and updating and get the previous and/or new values or just the pk/sk. You can use this instead of Sns/Sqs.
+
+### S3
+
+* Search for s3 and create a bucket called "jarrydawscourse".
+* You can add a file to that bucket by clicking on the bucket and there should be a upload button to click.
+    * You can upload a single file or a folder with multiple files.
+    * You can share a link to the uploaded file temporarily by clicking actions -> share with a presigned url.
